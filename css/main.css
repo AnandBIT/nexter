@@ -636,3 +636,15 @@ body {
   text-align: center;
   width: 70%;
 }
+
+@media only screen and (max-width: 37.5em) {
+  .copyright {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .copyright {
+    width: 95%;
+  }
+}

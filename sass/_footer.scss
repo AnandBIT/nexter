@@ -41,4 +41,12 @@
     margin: 6rem auto 0;
     text-align: center;
     width: 70%;
+
+    @include respond($bp-small) {
+        width: 80%;
+    }
+
+    @media only screen and (max-width: 400px) {
+        width: 95%;
+    }
 }
