@@ -10,7 +10,12 @@ $(window).on('load', function () {
 const getFav = JSON.parse(window.localStorage.getItem("FAV"));
 
 let prevItem = getFav;
-let favourites = [...prevItem];
+let favourites = [];
+
+if (prevItem)
+    favourites = [...prevItem];
+else
+    favourites = [];
 
 for (let i = 0; i < $(".home__like").length; i++)
     $(".home__like")[i].id = i;
