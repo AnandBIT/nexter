@@ -25,6 +25,7 @@
 
     &__like {
         grid-area: 1/2/2/3;
+        fill: #fff;
         height: 2.5rem;
         width: 2.5rem;
         justify-self: end;
@@ -79,4 +80,8 @@
     &__btn {
         grid-column: 1/-1;
     }
+}
+
+.marked{
+    fill: $color-primary;
 }

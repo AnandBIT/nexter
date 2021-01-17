@@ -475,6 +475,7 @@ body {
 
 .home__like {
   grid-area: 1/2/2/3;
+  fill: #fff;
   height: 2.5rem;
   width: 2.5rem;
   justify-self: end;
@@ -522,6 +523,10 @@ body {
 
 .home__btn {
   grid-column: 1/-1;
+}
+
+.marked {
+  fill: #c69963;
 }
 
 .gallery {

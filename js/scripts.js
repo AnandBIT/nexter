@@ -7,8 +7,33 @@ $(window).on('load', function () {
     }
 });
 
-$(".home__like").css("fill", "#fff");
+const getFav = JSON.parse(window.localStorage.getItem("FAV"));
+
+let prevItem = getFav;
+let favourites = [...prevItem];
+
+for (let i = 0; i < $(".home__like").length; i++)
+    $(".home__like")[i].id = i;
+
 $(".home__like use").click((event) => {
-    let svgColor = event.target.parentNode.style.fill;
-    event.target.parentNode.style.fill = svgColor === "rgb(255, 255, 255)" ? "#c69963" : "#fff";
+    const currentID = JSON.parse(event.target.parentNode.id);
+
+    $("#" + currentID).toggleClass("marked");
+
+    if (event.target.parentNode.classList.contains("marked")) {
+        // if (!favourites.includes(currentID))
+        favourites.push(currentID);
+    } else {
+        favourites = favourites.filter((item, index) =>
+            index != favourites.indexOf(currentID)
+        );
+    }
+
+    window.localStorage.setItem("FAV", JSON.stringify(favourites));
 });
+
+if (prevItem) {
+    prevItem.forEach((item) => {
+        document.getElementById(item).classList.add("marked");
+    });
+}
