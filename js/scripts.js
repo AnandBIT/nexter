@@ -7,6 +7,9 @@ $(window).on('load', function () {
     }
 });
 
+// Dynamic year display
+$(".copyright span").text(new Date().getFullYear());
+
 /* Store the data in LocalStorage */
 
 const getFav = JSON.parse(window.localStorage.getItem("FAV"));
@@ -45,57 +48,7 @@ if (prevItem) {
     });
 }
 
-
-/* Use of WayPoint jQuery Plugin to animate on Scroll */
-
-$('.sidebar').waypoint(function (direction) {
-    $('.sidebar').addClass('animate__fadeIn');
-});
-
-$('.header').waypoint(function (direction) {
-    $('.header').addClass('animate__fadeIn');
-}, {
+// Initialisation of AOS library
+AOS.init({
     offset: 100
-});
-
-$('.realtors').waypoint(function (direction) {
-    $('.realtors').addClass('animate__fadeIn');
-}, {
-    offset: "50%"
-});
-
-$('.features').waypoint(function (direction) {
-    $('.features').addClass('animate__fadeIn');
-}, {
-    offset: "50%"
-});
-
-$('.story__pictures').waypoint(function (direction) {
-    $('.story__pictures').addClass('animate__fadeIn');
-}, {
-    offset: "80%"
-});
-
-$('.story__content').waypoint(function (direction) {
-    $('.story__content').addClass('animate__fadeIn');
-}, {
-    offset: "80%"
-});
-
-$('.homes').waypoint(function (direction) {
-    $('.homes').addClass('animate__fadeIn');
-}, {
-    offset: "60%"
-});
-
-$('.gallery').waypoint(function (direction) {
-    $('.gallery').addClass('animate__fadeIn');
-}, {
-    offset: "35%"
-});
-
-$('.footer').waypoint(function (direction) {
-    $('.footer').addClass('animate__fadeIn');
-}, {
-    offset: "80%"
 });
